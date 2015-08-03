@@ -23,6 +23,10 @@ class HomePage(webapp2.RequestHandler):
     def get(self):
         template = JINJA_ENVIRONMENT.get_template('home.html')
         self.response.write(template.render())
+class AboutPage(webapp2.RequestHandler):
+    def get(self):
+        template = JINJA_ENVIRONMENT.get_template('about.html')
+        self.response.write(template.render())
 
 class EventMaker(webapp2.RequestHandler):
     def get(self):
@@ -52,13 +56,21 @@ class ViewEvent(webapp2.RequestHandler):
 
 class ResultsPage(webapp2.RequestHandler):
     def get(self):
+        event_query = MakeEvent.query()
+        events = event_query.fetch()
         template = JINJA_ENVIRONMENT.get_template('results.html')
         self.response.write(template.render())
 # >>>>>>> 552c95d91b0d1490f0589ce2d5caa28d4d5d0387
+
+
 
 app = webapp2.WSGIApplication([
     ('/', HomePage),
     ('/eventmaker', EventMaker),
     ('/results', ResultsPage),
+<<<<<<< HEAD
     ('/viewevent', ViewEvent)
+=======
+    ('/about', AboutPage)
+>>>>>>> 584609c3f4c99bbdf913e676398c7e2e3c8c79d6
 ], debug=True)
