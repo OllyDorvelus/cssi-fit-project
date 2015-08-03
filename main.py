@@ -25,8 +25,13 @@ class EventMaker(webapp2.RequestHandler):
     def get(self):
         template = JINJA_ENVIRONMENT.get_template('make_event.html')
         self.response.write(template.render())
+class ResultsPage(webapp2.RequestHandler):
+    def get(self):
+        template = JINJA_ENVIRONMENT.get_template('results.html')
+        self.response.write(template.render())
 
 app = webapp2.WSGIApplication([
     ('/', HomePage),
-    ('/eventmaker', EventMaker)
+    ('/eventmaker', EventMaker),
+    ('/results', ResultsPage)
 ], debug=True)
