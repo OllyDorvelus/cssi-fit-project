@@ -60,7 +60,6 @@ class ResultsPage(webapp2.RequestHandler):
         event = event_query.fetch()
         template = JINJA_ENVIRONMENT.get_template('results.html')
         self.response.write(template.render({'events': event}))
-        self.response.write(template.render())
 
 
 app = webapp2.WSGIApplication([
