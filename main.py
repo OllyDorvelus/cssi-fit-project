@@ -20,6 +20,7 @@ class HomePage(webapp2.RequestHandler):
     def get(self):
         template = JINJA_ENVIRONMENT.get_template('home.html')
         self.response.write(template.render())
+
 class EventMaker(webapp2.RequestHandler):
     def get(self):
         template = JINJA_ENVIRONMENT.get_template('make_event.html')
