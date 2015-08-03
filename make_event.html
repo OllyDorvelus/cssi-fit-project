@@ -6,7 +6,7 @@
 </head>
 <body>
 <h1 style=text-align:center>Make an Event!</h1>
-<form method="post">
+<form enctype="multipart/form-data" method="post" >
 First Name:<br>
 <input type="text" name="firstname">
 <br>
@@ -17,15 +17,17 @@ Event Name<br>
 <br>
 Start Time:<br>
 <input type ="text" name="start_time"><br>
-Location:<br>
-<input type="text" name="location"><br>
+Date:<br>
+<input type ="text" name="date_time"><br>
 End Time:<br>
 <input type="text" name="end_time"><br>
+Location:<br>
+<input type="text" name="location"><br>
 Description:<br>
 <textarea name="descrip" rows="7" cols="60"></textarea><br>
 Upload Image:<br>
 <input type="file" name="filename" accept="image/gif, image/jpeg, image/png"><br><br>
-<input type="submit" name="sub">
+<input type="submit" name="sub" value="Submit">
 </form>
 </body>
 </html>
