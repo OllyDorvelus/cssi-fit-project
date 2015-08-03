@@ -73,6 +73,8 @@ class LoginHandler(webapp2.RequestHandler):
                         users.create_login_url('/'))
 
         self.response.out.write("<html><body>%s</body></html>" % greeting)
+        template = JINJA_ENVIRONMENT.get_template('login.html')
+        self.response.write(template.render())
 
 
 app = webapp2.WSGIApplication([
