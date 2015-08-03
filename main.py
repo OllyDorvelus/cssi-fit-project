@@ -31,6 +31,8 @@ class EventMaker(webapp2.RequestHandler):
         self.response.write(template.render())
 class ResultsPage(webapp2.RequestHandler):
     def get(self):
+        event_query = MakeEvent.query()
+        events = event_query.fetch()
         template = JINJA_ENVIRONMENT.get_template('results.html')
         self.response.write(template.render())
 
