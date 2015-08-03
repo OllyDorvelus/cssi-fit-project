@@ -1,17 +1,20 @@
 <!DOCTYPE HTML>
 <html>
-<head>
-<title>Events</title>
-<link rel="stylesheet" type="text/css" href= "style.css">
-</head>
-<body>
-<h1 class="center">
-
-
-
-
-
-
-
-</body>
+  <head>
+    <title>Events</title>
+    <link rel="stylesheet" type="text/css" href= "style.css">
+  </head>
+  <body>
+      <h1 class="center">
+        Results
+      </h1>
+      <section>
+        {% for event in events: %}
+        <h2>{{event.db_eventname}}</h2>
+        <p>
+          {{event.db_description}}
+        </p>
+        {% endfor %}
+      </section>
+    </body>
 </html>
