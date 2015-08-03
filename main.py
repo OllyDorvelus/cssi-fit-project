@@ -68,9 +68,9 @@ app = webapp2.WSGIApplication([
     ('/', HomePage),
     ('/eventmaker', EventMaker),
     ('/results', ResultsPage),
-<<<<<<< HEAD
-    ('/viewevent', ViewEvent)
-=======
+
+    ('/viewevent', ViewEvent),
+
     ('/about', AboutPage)
->>>>>>> 584609c3f4c99bbdf913e676398c7e2e3c8c79d6
+
 ], debug=True)
