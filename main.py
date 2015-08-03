@@ -32,6 +32,8 @@ class EventMaker(webapp2.RequestHandler):
     def get(self):
         template = JINJA_ENVIRONMENT.get_template('make_event.html')
         self.response.write(template.render())
+#<<<<<<< HEAD
+#=======
     def post(self):
         first_name = self.request.get('firstname')
         last_name = self.request.get('lastname')
@@ -53,18 +55,37 @@ class ViewEvent(webapp2.RequestHandler):
         template = JINJA_ENVIRONMENT.get_template('view_event.html')
         self.response.write(template.render({"events":myevents}))
 
+#>>>>>>> a0fd4b28b24391760174af9e07f544b1a81aec9a
 
 class ResultsPage(webapp2.RequestHandler):
     def get(self):
-        event_query = MakeEvent.query()
-        events = event_query.fetch()
+        event_query = Event.query()
+        event = event_query.fetch()
         template = JINJA_ENVIRONMENT.get_template('results.html')
+#<<<<<<< HEAD
+        self.response.write(template.render({'events': event}))
+#=======
         self.response.write(template.render())
+<<<<<<< HEAD
+=======
+#>>>>>>> 552c95d91b0d1490f0589ce2d5caa28d4d5d0387
+#>>>>>>> a0fd4b28b24391760174af9e07f544b1a81aec9a
+
+
+>>>>>>> d616f46033f1de3892a908bce7298454633af2f2
 
 app = webapp2.WSGIApplication([
     ('/', HomePage),
     ('/eventmaker', EventMaker),
     ('/results', ResultsPage),
+<<<<<<< HEAD
     ('/viewevent', ViewEvent),
     ('/about', AboutPage)
+=======
+#<<<<<<< HEAD
+    ('/viewevent', ViewEvent),
+#=======
+    ('/about', AboutPage)
+#>>>>>>> 584609c3f4c99bbdf913e676398c7e2e3c8c79d6
+>>>>>>> d616f46033f1de3892a908bce7298454633af2f2
 ], debug=True)
