@@ -9,8 +9,8 @@ body>form>p#srch{
 }
 
 nav{
-  background-color: white;
-  width:95%;
+  background-color: #C1E8C4;
+  width:80%;
   height:50px;
   margin-left:auto;
   margin-right: auto;
@@ -30,4 +30,13 @@ nav>ul>li>a{
   text-decoration: none;
   padding-right:10px;
   color:orange
+}
+.bio{
+  height:25%;
+  width:95%;
+  border:solid;
+  border-radius:10px;
+  margin-left:auto;
+  margin-right:auto;
+  background-color:#C1E8C4;
 }
