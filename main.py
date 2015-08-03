@@ -30,6 +30,8 @@ class ResultsPage(webapp2.RequestHandler):
         template = JINJA_ENVIRONMENT.get_template('results.html')
         self.response.write(template.render())
 
+
+
 app = webapp2.WSGIApplication([
     ('/', HomePage),
     ('/eventmaker', EventMaker),
