@@ -45,9 +45,17 @@ class EventMaker(webapp2.RequestHandler):
         image = self.request.get('filename')
         event_entry = Event(db_firstname=first_name, db_lastname=last_name, db_eventname=eventname, db_location=location,
          db_description=description, db_start_time=starttime, db_end_time=endtime, db_image=image)
-        event_entry.put()
+        key = event_entry.put()
+        template_values={
+        'eventname': eventname,
+        'firstname': first_name,
+        'lastname': last_name,
+        'location': location,
+        'starttime': starttime,
+        'endtime': endtime,
+        'description':description}
         template = JINJA_ENVIRONMENT.get_template('view_event.html')
-        self.response.write(template.render())
+        self.response.write(template.render(template_values))
 class ViewEvent(webapp2.RequestHandler):
     def get(self):
         event_query = Event.query()
