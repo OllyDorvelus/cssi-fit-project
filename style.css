@@ -2,16 +2,16 @@ body{
   background-image: url("http://host2post.com/server13/photos/UrAAWHXgSspswM~/Wallpaper-Gauze-Green-Texture-Background-Wallpapers-Textures_2560x1600.jpg");
 }
 
-body>form>div#box{
+body>form>div{
+  margin-left:200px;
+  margin-top:200px;
+}
+
+/*body>form>div>.box{
   background-color: salmon;
   width:9%;
   height:20px;
-}
-
-body>form>div#button{
-  width:100px;
-  height:40px;
-}
+}*/
 
 nav{
   background-color: #C1E8C4;
