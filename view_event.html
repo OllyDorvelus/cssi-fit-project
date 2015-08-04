@@ -2,8 +2,7 @@
 <html>
 <head>
 <title>{{event.db_eventname}}</title>
-<link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" type="text/css" href=style.css>
+<link href='http://fonts.googleapis.com/css?family=Cabin:400,700' rel='stylesheet' type='text/css'><link rel="stylesheet" type="text/css" href=style.css>
 <nav>
   <ul>
     <li><a href="/">Home</a></li>
@@ -24,10 +23,10 @@
       to {{event.db_end_time}}
     {%endif%}</p>
   <img src={{image}}/>
-  <div id="eventbox1"
+  <div class="eventboxes" id="eventbox1">
     <p>{{event.db_description}}</p>
   </div>
-  <div id="eventbox2">
+  <div class="eventboxes" id="eventbox2">
     <h2>Location:{{event.db_location}}</h2>
   </div>
 </div>
