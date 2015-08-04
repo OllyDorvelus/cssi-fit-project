@@ -1,17 +1,9 @@
 *{
   margin:0;
   padding:0;
-}
-
-body{
-  background-image: url("/Users/demouser/cssi/cssi-fit-project/images/collage.jpg");
-}
-/*body{
-  background-image: url("http://host2post.com/server13/photos/UrAAWHXgSspswM~/Wallpaper-Gauze-Green-Texture-Background-Wallpapers-Textures_2560x1600.jpg");
-
-*{
   font-family: 'Cabin', sans-serif;
 }
+
 body{
   background-image: url("/images/nyc_brooklyn_bridge.jpg");
   background-size:100%;
@@ -100,7 +92,7 @@ nav>ul>li>a{
 /*ViewEvent Page*/
 .eventboxes{
   height:auto;
-  padding:50px 25px 100px;
+  padding:45px 25px 100px;
   width:auto;
   border-radius:10px;
 }
@@ -114,7 +106,6 @@ nav>ul>li>a{
 }
 #eventbox1{
   margin-top:40px;
-  text-align:left;
   display:block;
   float:left;
   opacity:.8;
@@ -122,7 +113,6 @@ nav>ul>li>a{
   color:#FFFFFF;
 }
 #eventbox2{
-  text-align:left;
   display:block;
   float:right;
   margin-top:200px;
@@ -153,5 +143,7 @@ nav>ul>li>a{
   width: 28%;
   margin-left: auto;
   margin-right: auto;
-
+}
+.titlesinbox{
+  text-align:center;
 }
