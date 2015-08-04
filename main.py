@@ -67,7 +67,7 @@ class ViewEvent(webapp2.RequestHandler):
         # event_query = Event.query()
         # myevents = event_query.fetch()
         template = JINJA_ENVIRONMENT.get_template('view_event.html')
-        self.response.write(template.render({"event":event}))
+        self.response.write(template.render({'event':event}))
 
 
 class ResultsPage(webapp2.RequestHandler):
