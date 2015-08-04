@@ -17,12 +17,14 @@
         Results
       </h1>
       <section>
+        <a href="/view_event?id=%s">
         {% for event in events: %}
         <h2>{{event.db_eventname}}</h2>
         <p>
           {{event.db_description}}
         </p>
         {% endfor %}
+      </a>
       </section>
     </body>
 </html>

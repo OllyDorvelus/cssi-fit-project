@@ -1,5 +1,21 @@
+body{
+  background-image: url("http://host2post.com/server13/photos/UrAAWHXgSspswM~/Wallpaper-Gauze-Green-Texture-Background-Wallpapers-Textures_2560x1600.jpg");
+}
+
+body>form>div#box{
+  background-color: salmon;
+  width:9%;
+  height:20px;
+}
+
+body>form>div#button{
+  width:100px;
+  height:40px;
+}
+
 nav{
-  width:95%;
+  background-color: #C1E8C4;
+  width:80%;
   height:50px;
   margin-left:auto;
   margin-right: auto;
@@ -18,4 +34,14 @@ nav>ul>li>a{
   font-size:100%;
   text-decoration: none;
   padding-right:10px;
+  color:orange
+}
+.bio{
+  height:25%;
+  width:95%;
+  border:solid;
+  border-radius:10px;
+  margin-left:auto;
+  margin-right:auto;
+  background-color:#C1E8C4;
 }

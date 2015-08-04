@@ -4,7 +4,7 @@ import jinja2
 import webapp2
 from google.appengine.api import users
 from google.appengine.ext import ndb
-
+import json
 # from google.appengine.ext import blobstore
 # from google.appengine.ext.webapp import blobstore_handlers
 # from google.appengine.ext.webapp.util import run_wsgi_app
@@ -14,6 +14,8 @@ JINJA_ENVIRONMENT = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
     extensions=['jinja2.ext.autoescape'],
     autoescape=True)
+
+
 
 class Event(ndb.Model):
     db_firstname = ndb.StringProperty(required=True)
@@ -30,9 +32,9 @@ class HomePage(webapp2.RequestHandler):
     def get(self):
         template = JINJA_ENVIRONMENT.get_template('home.html')
         self.response.write(template.render())
-    def post(self):
+        https://www.eventbrite.com/oauth/authorize?response_type=code&client_id=JYKKRDLXVYPCAVE46S3I
 
-        self.redirect("/results")
+
 class AboutPage(webapp2.RequestHandler):
     def get(self):
         template = JINJA_ENVIRONMENT.get_template('about.html')
@@ -68,6 +70,7 @@ class ViewEvent(webapp2.RequestHandler):
 
 class ResultsPage(webapp2.RequestHandler):
     def get(self):
+        event_id = self.request.get('id')
         event_query = Event.query()
         event = event_query.fetch()
         template = JINJA_ENVIRONMENT.get_template('results.html')
@@ -86,6 +89,8 @@ class LoginHandler(webapp2.RequestHandler):
                         users.create_login_url('/'))
 
         self.response.out.write("<html><body>%s</body></html>" % greeting)
+        template = JINJA_ENVIRONMENT.get_template('login.html')
+        self.response.write(template.render())
 
 
 app = webapp2.WSGIApplication([
