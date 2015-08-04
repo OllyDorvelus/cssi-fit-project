@@ -3,18 +3,37 @@
 <head>
 <title></title>
 <link rel="stylesheet" type="text/css" href=style.css>
+<nav>
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/eventmaker">Create</a></li>
+    <li><a href="/login">Login</a></li>
+  <ul>
+</nav>
 </head>
 <body>
 <h1>Your Events</h1>
 <section>
+
 {% for myevents in events %}
 <h1>{{myevents.db_eventname}}</h1>
 <h2>{{myevents.db_lastname}} , {{myevents.db_firstname}}</h2>
- {{myevents.db_image}}
+  {{myevents.db_image}}
 <h2>Location:{{myevents.db_location}}
 <p>{{myevents.db_start_time}} , {{myevents.db_end_time}}</p>
 <p>{{myevents.db_description}}</p>
 {% endfor %}
+
+
+<h1>{{eventname}}</h1>
+<h2>By {{firstname}} {{lastname}}</h2>
+<img src={{image}}/>
+<h2>Location:{{location}}</h2>
+<p>from {{starttime}} , {{endtime}}</p>
+<p>{{description}}</p>
+
+
 
 
 <section>

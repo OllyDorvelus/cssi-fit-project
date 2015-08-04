@@ -3,10 +3,20 @@
 <head>
 <title>Make an Event</title>
 <link rel= "stylesheet" type="text/css" href="style.css">
+<script language="javascript" type="text/javascript" src="jquery-1.8.3.js"></script>
+<script src="test.js"></script>
+<nav>
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/eventmaker">Create</a></li>
+    <li><a href="/login">Login</a></li>
+  <ul>
+</nav>
 </head>
 <body>
 <h1 style=text-align:center>Make an Event!</h1>
-<form enctype="multipart/form-data" method="post" >
+<form method="post" enctype="multipart/form-data">
 First Name:<br>
 <input type="text" name="firstname">
 <br>
@@ -26,7 +36,7 @@ Location:<br>
 Description:<br>
 <textarea name="descrip" rows="7" cols="60"></textarea><br>
 Upload Image:<br>
-<input type="file" name="filename" accept="image/gif, image/jpeg, image/png"><br><br>
+<input type="file" name="img" accept="image/gif, image/jpeg, image/png"><br><br>
 <input type="submit" name="sub" value="Submit">
 </form>
 </body>
