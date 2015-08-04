@@ -88,7 +88,6 @@ class LoginHandler(webapp2.RequestHandler):
         else:
             greeting = ('<a href="%s">Sign in or register</a>.' %
                         users.create_login_url('/'))
-
         self.response.out.write("<html><body>%s</body></html>" % greeting)
         template = JINJA_ENVIRONMENT.get_template('login.html')
         self.response.write(template.render())
@@ -98,25 +97,7 @@ app = webapp2.WSGIApplication([
     ('/', HomePage),
     ('/eventmaker', EventMaker),
     ('/results', ResultsPage),
-
-
-
-
-    ('/viewevent', ViewEvent),
-
-
     ('/view_event', ViewEvent),
-
-    ('/about', AboutPage),
-
-
-    ('/viewevent', ViewEvent),
-
-    ('/about', AboutPage),
-
-
-    ('/viewevent', ViewEvent),
     ('/about', AboutPage),
     ('/login', LoginHandler),
-
 ], debug=True)
