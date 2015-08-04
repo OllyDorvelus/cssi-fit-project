@@ -98,23 +98,6 @@ app = webapp2.WSGIApplication([
     ('/', HomePage),
     ('/eventmaker', EventMaker),
     ('/results', ResultsPage),
-
-
-
-
-    ('/viewevent', ViewEvent),
-
-
-    ('/view_event', ViewEvent),
-
-    ('/about', AboutPage),
-
-
-    ('/viewevent', ViewEvent),
-
-    ('/about', AboutPage),
-
-
     ('/viewevent', ViewEvent),
     ('/about', AboutPage),
     ('/login', LoginHandler),
