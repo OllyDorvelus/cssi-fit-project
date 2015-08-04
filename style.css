@@ -13,7 +13,7 @@
 #searchbox{
   margin-left:auto;
   margin-top:auto;
-  height:1000px;
+  height:auto;
   width:90%;
   text-align: center;
 }
@@ -41,6 +41,32 @@ nav>ul>li>a{
   text-decoration: none;
   padding-right:10px;
   color:orange
+}
+
+.find{
+  background-color: #C1E8C4;
+  border-radius:10px;
+  height:270px;
+  width:40%;
+  padding:100;
+  color:orange;
+  margin-top:300px;
+  display:block;
+  float:left;
+  text-align:center;
+}
+
+.create{
+  background-color: #C1E8C4;
+  border-radius:10px;
+  height:270px;
+  width:40%;
+  padding:100;
+  color:orange;
+  margin-top:10px;
+  display:block;
+  float:right;
+  text-align:center;
 }
 
 /*About Page*/
