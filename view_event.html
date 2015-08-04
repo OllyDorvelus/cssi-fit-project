@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title></title>
-<link rel="stylesheet" type="text/css" href=style.css>
+<title>{{event.db_eventname}}</title>
+<link href='http://fonts.googleapis.com/css?family=Cabin:400,700' rel='stylesheet' type='text/css'><link rel="stylesheet" type="text/css" href=style.css>
 <nav>
   <ul>
     <li><a href="/">Home</a></li>
@@ -31,13 +31,26 @@
 
 
 
-<h1>{{event.db_eventname}}</h1>
-<h2>By {{event.db_firstname}} {{event.db_lastname}}</h2>
-<img src={{image}}/>
-<h2>Location:{{event.db_location}}</h2>
-<p>from {{event.db_start_time}} to {{event.db_end_time}}</p>
-<p>{{event.description}}</p>
 
+
+
+
+
+<div id="eventbox">
+  <h1 id="title">{{event.db_eventname}}</h1>
+  <h2 id="name">By {{event.db_firstname}} {{event.db_lastname}}</h2>
+  <p>Start Time: {{event.db_start_time}}
+    {%if event.db_end_time:%}
+      to {{event.db_end_time}}
+    {%endif%}</p>
+  <img src={{image}}/>
+  <div class="eventboxes" id="eventbox1">
+    <p>{{event.db_description}}</p>
+  </div>
+  <div class="eventboxes" id="eventbox2">
+    <h2>Location:{{event.db_location}}</h2>
+  </div>
+</div>
 
 <section>
 </body>

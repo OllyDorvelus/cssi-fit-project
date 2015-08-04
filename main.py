@@ -72,13 +72,16 @@ class EventMaker(webapp2.RequestHandler):
         image = str(self.request.get('img'))
         event_entry = Event(db_firstname=first_name, db_lastname=last_name, db_eventname=eventname, db_location=location,
          db_description=description, db_start_time=starttime, db_end_time=endtime, db_date=date, db_image=image)
-        event_entry.put()
+        key=event_entry.put()
+
         # template = JINJA_ENVIRONMENT.get_template('view_event.html')
         # self.response.write(template.render())
 
-        self.redirect('/results')
 
-        self.redirect('/view_event?q='+str(event_entry.key.id()))
+
+
+
+        self.redirect('/view_event?id='+str(key.id()))
 
 class ViewEvent(webapp2.RequestHandler):
     def get(self):

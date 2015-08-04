@@ -1,26 +1,32 @@
-/*body{
-  background-image: url("http://host2post.com/server13/photos/UrAAWHXgSspswM~/Wallpaper-Gauze-Green-Texture-Background-Wallpapers-Textures_2560x1600.jpg");
-}*/
-
-body>form>div{
-  margin-left:200px;
-  margin-top:200px;
+*{
+  margin:0;
+  padding:0;
+}
+*{
+  font-family: 'Cabin', sans-serif;
+}
+body{
+  background-image: url("/images/nyc_brooklyn_bridge.jpg");
+  background-size:100%;
+}
+/*HomePage*/
+#searchbox{
+  margin-left:auto;
+  margin-top:auto;
+  height:auto;
+  width:90%;
+  text-align: center;
 }
 
-/*body>form>div>.box{
-  background-color: salmon;
-  width:9%;
-  height:20px;
-}*/
-
+/*Navigation Bar*/
 nav{
-  background-color: #C1E8C4;
-  width:80%;
-  height:50px;
+  background-color: #070708;
+  width:95%;
+  height:90px;
   margin-left:auto;
   margin-right: auto;
-  border:solid;
   border-radius:10px;
+  opacity:.9;
 }
 
 nav>ul{
@@ -36,6 +42,34 @@ nav>ul>li>a{
   padding-right:10px;
   color:orange
 }
+
+.find{
+  background-color: #C1E8C4;
+  border-radius:10px;
+  height:270px;
+  width:40%;
+  padding:100;
+  color:orange;
+  margin-top:300px;
+  display:block;
+  float:left;
+  text-align:center;
+}
+
+.create{
+  background-color: #C1E8C4;
+  border-radius:10px;
+  height:270px;
+  width:40%;
+  padding:100;
+  color:orange;
+  margin-top:10px;
+  display:block;
+  float:right;
+  text-align:center;
+}
+
+/*About Page*/
 .bio{
   height:25%;
   width:95%;
@@ -44,4 +78,41 @@ nav>ul>li>a{
   margin-left:auto;
   margin-right:auto;
   background-color:#C1E8C4;
+}
+
+/*ViewEvent Page*/
+.eventboxes{
+  height:auto;
+  padding:80px 30px;
+  width:45%;
+}
+#eventbox{
+  margin-top:50px;
+  margin-left:auto;
+  margin-right:auto;
+  width:100%;
+  height:1000px;
+  border:solid;
+  border-radius:10px;
+  text-align:center;
+}
+#eventbox1{
+  border:solid;
+  text-align:left;
+  display:block;
+  float:left;
+}
+#eventbox2{
+  border:solid;
+  text-align:left;
+  display:block;
+  float:right;
+  margin-top:10px;
+}
+#title{
+  color:blue;
+  font-size:40px;
+}
+#name{
+  font-weight: normal;
 }
