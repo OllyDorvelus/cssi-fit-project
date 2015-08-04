@@ -2,6 +2,7 @@
   margin:0;
   padding:0;
 }
+<<<<<<< HEAD
 
 body{
   background-image: url("/Users/demouser/cssi/cssi-fit-project/images/collage.jpg");
@@ -9,6 +10,15 @@ body{
 /*body{
   background-image: url("http://host2post.com/server13/photos/UrAAWHXgSspswM~/Wallpaper-Gauze-Green-Texture-Background-Wallpapers-Textures_2560x1600.jpg");
 
+=======
+*{
+  font-family: 'Cabin', sans-serif;
+}
+body{
+  background-image: url("/images/nyc_brooklyn_bridge.jpg");
+  background-size:100%;
+}
+>>>>>>> a5b8b17ace0ee8adf33921342aac0ff67e3eb4a7
 /*HomePage*/
 #searchbox{
   margin-left:auto;
