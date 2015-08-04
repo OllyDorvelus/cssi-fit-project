@@ -15,12 +15,40 @@
 <body>
 <h1></h1>
 <section>
+
+
+{% for myevents in events %}
+<h1>{{myevents.db_eventname}}</h1>
+<h2>{{myevents.db_lastname}} , {{myevents.db_firstname}}</h2>
+  {{myevents.db_image}}
+<h2>Location:{{myevents.db_location}}
+<p>{{myevents.db_start_time}} , {{myevents.db_end_time}}</p>
+<p>{{myevents.db_description}}</p>
+{% endfor %}
+
+
+
 <h1>{{eventname}}</h1>
 <h2>By {{firstname}} {{lastname}}</h2>
 <img src={{image}}/>
 <h2>Location:{{location}}</h2>
 <p>from {{starttime}} , {{endtime}}</p>
 <p>{{description}}</p>
+
+
+
+
+
+=======
+>>>>>>> 16afc27d2f67b48079260f734ad094f76b504189
+=======
+<h1>{{event.db_eventname}}</h1>
+<h2>By {{event.db_firstname}} {{event.db_lastname}}</h2>
+<img src={{image}}/>
+<h2>Location:{{event.db_location}}</h2>
+<p>from {event.db_start_time}} to {{event.db_end_time}}</p>
+<p>{{event.description}}</p>
+>>>>>>> b15912895e0e34b4ed9b47b67558dc3615a07844
 <section>
 </body>
 </html>
