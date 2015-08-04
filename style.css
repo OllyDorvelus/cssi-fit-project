@@ -18,6 +18,37 @@ body{
   text-align: center;
 }
 
+
+.find{
+  background-color: #C1E8C4;
+  box-shadow: 10px 10px 5px #888888;
+  border-radius:10px;
+  height:270px;
+  width:40%;
+  padding:100;
+  color:forestgreen;
+  margin-top:300px;
+  display:block;
+  float:left;
+  text-align:center;
+  opacity: 0.8;
+}
+
+.create{
+  background-color: #C1E8C4;
+  box-shadow: 10px 10px 5px #888888;
+  border-radius:10px;
+  height:270px;
+  width:40%;
+  padding:100;
+  color:indianred;
+  margin-top:10px;
+  display:block;
+  float:right;
+  text-align:center;
+  opacity: 0.8;
+}
+
 /*Navigation Bar*/
 nav{
   background-color: #070708;
@@ -43,34 +74,6 @@ nav>ul>li>a{
   color:orange
 }
 
-.find{
-  background-color: #C1E8C4;
-  box-shadow: 10px 10px 5px #888888;
-  border-radius:10px;
-  height:270px;
-  width:40%;
-  padding:100;
-  color:forestgreen;
-  margin-top:300px;
-  display:block;
-  float:left;
-  text-align:center;
-}
-
-.create{
-  background-color: #C1E8C4;
-  box-shadow: 10px 10px 5px #888888;
-  border-radius:10px;
-  height:270px;
-  width:40%;
-  padding:100;
-  color:indianred;
-  margin-top:10px;
-  display:block;
-  float:right;
-  text-align:center;
-}
-
 /*About Page*/
 .bio{
   display:block;
@@ -89,6 +92,7 @@ nav>ul>li>a{
   width:95%;
   margin-left:90px;
   margin-right:auto;
+  opacity: 0.8;
 }
 
 /*ViewEvent Page*/
@@ -138,14 +142,18 @@ nav>ul>li>a{
 }
 #descrip{
   font-size:20px;
+}
+
 /*make event page*/
-.mkevent{
+
+.make{
   background-color: lemonchiffon;
   height: 450px;
   width: 28%;
   margin-left: auto;
   margin-right: auto;
 }
+
 .titlesinbox{
   text-align:center;
 }
