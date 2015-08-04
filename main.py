@@ -59,7 +59,7 @@ class EventMaker(webapp2.RequestHandler):
         event_entry.put()
         # template = JINJA_ENVIRONMENT.get_template('view_event.html')
         # self.response.write(template.render())
-        self.redirect('/viewevent')
+        self.redirect('/view_event?q='+str(event_entry.key.id()))
 class ViewEvent(webapp2.RequestHandler):
     def get(self):
         event_id=int(self.request.get('id'))
@@ -88,7 +88,6 @@ class LoginHandler(webapp2.RequestHandler):
         else:
             greeting = ('<a href="%s">Sign in or register</a>.' %
                         users.create_login_url('/'))
-
         self.response.out.write("<html><body>%s</body></html>" % greeting)
         template = JINJA_ENVIRONMENT.get_template('login.html')
         self.response.write(template.render())
@@ -98,8 +97,7 @@ app = webapp2.WSGIApplication([
     ('/', HomePage),
     ('/eventmaker', EventMaker),
     ('/results', ResultsPage),
-    ('/viewevent', ViewEvent),
+    ('/view_event', ViewEvent),
     ('/about', AboutPage),
     ('/login', LoginHandler),
-
 ], debug=True)
