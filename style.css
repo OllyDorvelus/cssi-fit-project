@@ -2,17 +2,12 @@
   margin:0;
   padding:0;
 }
-<<<<<<< HEAD
+
 body{
   background-image: url("/Users/demouser/cssi/cssi-fit-project/images/collage.jpg");
-=======
+}
 /*body{
   background-image: url("http://host2post.com/server13/photos/UrAAWHXgSspswM~/Wallpaper-Gauze-Green-Texture-Background-Wallpapers-Textures_2560x1600.jpg");
-}*/
-*{
-  font-family: 'Cabin', sans-serif;
->>>>>>> c7d61fa961179dc4c871d3dfc346b6f3f9a4c56e
-}
 
 /*HomePage*/
 #searchbox{
@@ -54,7 +49,7 @@ nav>ul>li>a{
   height:270px;
   width:40%;
   padding:100;
-  color:orange;
+  color:forestgreen;
   margin-top:300px;
   display:block;
   float:left;
@@ -67,7 +62,7 @@ nav>ul>li>a{
   height:270px;
   width:40%;
   padding:100;
-  color:orange;
+  color:indianred;
   margin-top:10px;
   display:block;
   float:right;
