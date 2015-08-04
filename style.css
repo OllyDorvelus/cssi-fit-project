@@ -5,7 +5,9 @@
 /*body{
   background-image: url("http://host2post.com/server13/photos/UrAAWHXgSspswM~/Wallpaper-Gauze-Green-Texture-Background-Wallpapers-Textures_2560x1600.jpg");
 }*/
-
+*{
+  font-family: 'Poiret One', sans-serif;
+}
 
 /*HomePage*/
 #searchbox{
@@ -53,13 +55,19 @@ nav>ul>li>a{
 
 /*ViewEvent Page*/
 #eventbox{
+  margin-top:50px;
+  margin-left:auto;
+  margin-right:auto;
   height:auto;
-  width:70%;
+  width:100%;
   border:solid;
   border-radius:10px;
-  margin-left:auto;
-  margin-right:auto
+  text-align:center;
 }
 #title{
   color:blue;
+  font-size:40px;
+}
+#name{
+
 }
