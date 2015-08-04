@@ -2,11 +2,8 @@
   margin:0;
   padding:0;
 }
-/*body{
-  background-image: url("http://host2post.com/server13/photos/UrAAWHXgSspswM~/Wallpaper-Gauze-Green-Texture-Background-Wallpapers-Textures_2560x1600.jpg");
-}*/
-*{
-  font-family: 'Poiret One', sans-serif;
+body{
+  background-image: url("/Users/demouser/cssi/cssi-fit-project/images/collage.jpg");
 }
 
 /*HomePage*/
