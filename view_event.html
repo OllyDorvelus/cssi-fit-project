@@ -15,40 +15,25 @@
 <body>
 <h1></h1>
 <section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div id="eventbox">
-  <h1 id="title">{{event.db_eventname}}</h1>
-  <h2 id="name">By {{event.db_firstname}} {{event.db_lastname}}</h2>
-  <p>Start Time: {{event.db_start_time}}
-    {%if event.db_end_time:%}
-      to {{event.db_end_time}}
-    {%endif%}</p>
-  <img src={{image}}/>
+  <div id="titlebox">
+    <h1 id="title">{{event.db_eventname}}</h1>
+    <h2 id="name">By {{event.db_firstname}} {{event.db_lastname}}</h2>
+    <p>Start Time: {{event.db_start_time}}
+      {%if event.db_end_time:%}
+        to {{event.db_end_time}}
+      {%endif%}</p>
+    <img src={{image}}/>
+  </div>
   <div class="eventboxes" id="eventbox1">
-    <p>{{event.db_description}}</p>
+    <h2>Location</h2>
+    <br>
+    <p>{{event.db_location}}</p>
   </div>
   <div class="eventboxes" id="eventbox2">
-    <h2>Location:{{event.db_location}}</h2>
+    <h2>Description</h2>
+    <br>
+    <p id="descrip">{{event.db_description}}</p>
   </div>
 </div>
 
