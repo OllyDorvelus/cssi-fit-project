@@ -1,29 +1,28 @@
+*{
+  margin:0;
+  padding:0;
+}
 /*body{
   background-image: url("http://host2post.com/server13/photos/UrAAWHXgSspswM~/Wallpaper-Gauze-Green-Texture-Background-Wallpapers-Textures_2560x1600.jpg");
 }*/
 
-/*body>form>div>input[type="text"] {
-  font-size:25px
-}*/
 
-body>form>div{
-  margin-left:200px;
-  margin-top:200px;
+/*HomePage*/
+#searchbox{
+  margin-left:auto;
+  margin-top:auto;
+  height:1000px;
+  width:90%;
+  text-align: center;
 }
 
-/*body>form>div>.box{
-  background-color: salmon;
-  width:9%;
-  height:20px;
-}*/
-
+/*Navigation Bar*/
 nav{
   background-color: #C1E8C4;
-  width:80%;
-  height:50px;
+  width:95%;
+  height:90px;
   margin-left:auto;
   margin-right: auto;
-  border:solid;
   border-radius:10px;
 }
 
@@ -40,6 +39,8 @@ nav>ul>li>a{
   padding-right:10px;
   color:orange
 }
+
+/*About Page*/
 .bio{
   height:25%;
   width:95%;
@@ -48,4 +49,17 @@ nav>ul>li>a{
   margin-left:auto;
   margin-right:auto;
   background-color:#C1E8C4;
+}
+
+/*ViewEvent Page*/
+#eventbox{
+  height:auto;
+  width:70%;
+  border:solid;
+  border-radius:10px;
+  margin-left:auto;
+  margin-right:auto
+}
+#title{
+  color:blue;
 }
