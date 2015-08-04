@@ -17,14 +17,15 @@
         Results
       </h1>
       <section>
-        <a href="/view_event?id=%s">
+
         {% for event in events: %}
-        <h2>{{event.db_eventname}}</h2>
+        <a href="/view_event?id={{event.key.id()}}">
+          <h2>{{event.db_eventname}}</h2>
+        </a>
         <p>
           {{event.db_description}}
         </p>
         {% endfor %}
-      </a>
       </section>
     </body>
 </html>
