@@ -2,6 +2,13 @@
   margin:0;
   padding:0;
 }
+
+body{
+  background-image: url("/Users/demouser/cssi/cssi-fit-project/images/collage.jpg");
+}
+/*body{
+  background-image: url("http://host2post.com/server13/photos/UrAAWHXgSspswM~/Wallpaper-Gauze-Green-Texture-Background-Wallpapers-Textures_2560x1600.jpg");
+
 *{
   font-family: 'Cabin', sans-serif;
 }
@@ -9,6 +16,7 @@ body{
   background-image: url("/images/nyc_brooklyn_bridge.jpg");
   background-size:100%;
 }
+
 /*HomePage*/
 #searchbox{
   margin-left:auto;
@@ -49,7 +57,7 @@ nav>ul>li>a{
   height:270px;
   width:40%;
   padding:100;
-  color:orange;
+  color:forestgreen;
   margin-top:300px;
   display:block;
   float:left;
@@ -62,7 +70,7 @@ nav>ul>li>a{
   height:270px;
   width:40%;
   padding:100;
-  color:orange;
+  color:indianred;
   margin-top:10px;
   display:block;
   float:right;
@@ -71,13 +79,22 @@ nav>ul>li>a{
 
 /*About Page*/
 .bio{
-  height:25%;
-  width:95%;
+  display:block;
+  float:left;
+  height:400px;
+  width:30%;
   border:solid;
   border-radius:10px;
   margin-left:auto;
   margin-right:auto;
   background-color:#C1E8C4;
+}
+
+#biocontainer{
+  height:400px;
+  width:95%;
+  margin-left:90px;
+  margin-right:auto;
 }
 
 /*ViewEvent Page*/
@@ -129,4 +146,12 @@ nav>ul>li>a{
 }
 #descrip{
   font-size:20px;
+/*make event page*/
+.mkevent{
+  background-color: lemonchiffon;
+  height: 450px;
+  width: 28%;
+  margin-left: auto;
+  margin-right: auto;
+
 }
