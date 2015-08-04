@@ -31,8 +31,7 @@ class HomePage(webapp2.RequestHandler):
         template = JINJA_ENVIRONMENT.get_template('home.html')
         self.response.write(template.render())
     def post(self):
-        res_query = Event.query()
-        results = res_query.fetch()
+
         self.redirect("/results")
 class AboutPage(webapp2.RequestHandler):
     def get(self):
@@ -73,8 +72,8 @@ class ResultsPage(webapp2.RequestHandler):
         event = event_query.fetch()
         template = JINJA_ENVIRONMENT.get_template('results.html')
         self.response.write(template.render({'events': event}))
-    def get(post):
-        # All of the terms in the search query.
+    # def get(post):
+    #     # All of the terms in the search query.
 
 class LoginHandler(webapp2.RequestHandler):
     def get(self):
@@ -108,6 +107,6 @@ app = webapp2.WSGIApplication([
 
     ('/viewevent', ViewEvent),
     ('/about', AboutPage),
-    ('/login', LoginHandler)
+    ('/login', LoginHandler),
 
 ], debug=True)
