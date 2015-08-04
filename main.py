@@ -59,7 +59,7 @@ class EventMaker(webapp2.RequestHandler):
         event_entry.put()
         # template = JINJA_ENVIRONMENT.get_template('view_event.html')
         # self.response.write(template.render())
-        self.redirect('/viewevent')
+        self.redirect('/view_event?q='+str(event_entry.key.id()))
 class ViewEvent(webapp2.RequestHandler):
     def get(self):
         event_id=int(self.request.get('id'))
