@@ -20,12 +20,13 @@
 
 /*Navigation Bar*/
 nav{
-  background-color: #C1E8C4;
+  background-color: #070708;
   width:95%;
   height:90px;
   margin-left:auto;
   margin-right: auto;
   border-radius:10px;
+  opacity:.9;
 }
 
 nav>ul{
@@ -63,6 +64,12 @@ nav>ul>li>a{
   border:solid;
   border-radius:10px;
   text-align:center;
+}
+#eventbox1{
+  height:auto;
+  padding:80px 10px;
+  width:40%;
+  border:solid;
 }
 #title{
   color:blue;
