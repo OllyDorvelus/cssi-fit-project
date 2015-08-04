@@ -4,7 +4,13 @@ import jinja2
 import webapp2
 from google.appengine.api import users
 from google.appengine.ext import ndb
+from google.appengine.api import urlfetch
 import json
+
+
+
+
+
 # from google.appengine.ext import blobstore
 # from google.appengine.ext.webapp import blobstore_handlers
 # from google.appengine.ext.webapp.util import run_wsgi_app
@@ -28,10 +34,20 @@ class Event(ndb.Model):
     db_date = ndb.StringProperty(required=True)
     db_image = ndb.BlobProperty(required=False)
 
+
 class HomePage(webapp2.RequestHandler):
     def get(self):
         template = JINJA_ENVIRONMENT.get_template('home.html')
         self.response.write(template.render())
+    def post(self):
+        url = "https://www.eventbriteapi.com/v3/events/search?q="
+        search_term = "search"
+        api_key = "&token=QFYVYGNAS5ENNEEHHXLI"
+
+        event_data_source = urlfetch.fetch(url + search_term + api_key )
+        event_json_content = event_data_source.content
+        display = json.loads(event_json_content)
+        self.response.write(display)
 
 
 
@@ -59,7 +75,11 @@ class EventMaker(webapp2.RequestHandler):
         event_entry.put()
         # template = JINJA_ENVIRONMENT.get_template('view_event.html')
         # self.response.write(template.render())
+
         self.redirect('/results')
+
+        self.redirect('/view_event?q='+str(event_entry.key.id()))
+
 class ViewEvent(webapp2.RequestHandler):
     def get(self):
         event_id=int(self.request.get('id'))
@@ -88,7 +108,6 @@ class LoginHandler(webapp2.RequestHandler):
         else:
             greeting = ('<a href="%s">Sign in or register</a>.' %
                         users.create_login_url('/'))
-
         self.response.out.write("<html><body>%s</body></html>" % greeting)
         template = JINJA_ENVIRONMENT.get_template('login.html')
         self.response.write(template.render())
@@ -101,5 +120,4 @@ app = webapp2.WSGIApplication([
     ('/view_event', ViewEvent),
     ('/about', AboutPage),
     ('/login', LoginHandler),
-
 ], debug=True)
