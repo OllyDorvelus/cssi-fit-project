@@ -43,13 +43,20 @@ class HomePage(webapp2.RequestHandler):
         url = "https://www.eventbriteapi.com/v3/events/search?categories=107,108&venue.region=NY&q="
         # url = "https://www.eventbriteapi.com/v3/events/search?q="
         search_term = self.request.get("search")
-        cat = "&categories=107,108"
+        # cat = "&categories=107,108"
         api_key = "&token=QFYVYGNAS5ENNEEHHXLI"
-
         event_data_source = urlfetch.fetch(url + search_term +  api_key )
         event_json_content = event_data_source.content
         display = json.loads(event_json_content)
-        self.response.write(display)
+        parsed_event_dictionary = json.loads(event_json_content)
+        if len(parsed_event_dictionary) < 10:
+            for i in range(0,len(parsed_event_dictionary)):
+                eventobj = parsed_event_dictionary['events'][i]
+                self.response.write(eventobj)
+        else:
+            for i in range(0,10):
+                eventobj=parsed_event_dictionary['events'][i]
+                self.response.write(eventobj)
 
 
 
