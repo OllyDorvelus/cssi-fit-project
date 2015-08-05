@@ -28,6 +28,10 @@ body{
   font-size: 2em;
 }
 
+#searchtext{
+  font-size: 30px;
+}
+
 #txt{
   width:900px;
   height:100px;
@@ -45,6 +49,7 @@ body{
   padding:100;
   color:goldenrod;
   margin-top:300px;
+  margin-left: 30px;
   display:block;
   float:left;
   text-align:center;
@@ -75,6 +80,7 @@ nav{
   height:70px;
   margin-left:auto;
   margin-right: auto;
+  margin-top:5px;
   border-radius:20px;
   opacity:.9;
   font-size:40px;
@@ -205,10 +211,13 @@ nav>ul>li>a{
 
 .make{
   background-color: lemonchiffon;
+  padding: 12px;
+  margin-top: 50px;
   height: 450px;
   width: 28%;
   margin-left: auto;
   margin-right: auto;
+  opacity: 0.8;
 }
 .titlesinbox{
   text-align:center;
