@@ -48,6 +48,7 @@ nav>ul>li>a{
 
 .find{
   background-color: #C1E8C4;
+  box-shadow: 10px 10px 5px #888888;
   border-radius:10px;
   height:270px;
   width:40%;
@@ -57,10 +58,12 @@ nav>ul>li>a{
   display:block;
   float:left;
   text-align:center;
+  opacity: 0.8;
 }
 
 .create{
   background-color: #C1E8C4;
+  box-shadow: 10px 10px 5px #888888;
   border-radius:10px;
   height:270px;
   width:40%;
@@ -70,6 +73,32 @@ nav>ul>li>a{
   display:block;
   float:right;
   text-align:center;
+  opacity: 0.8;
+}
+
+/*Navigation Bar*/
+nav{
+  background-color: #070708;
+  width:95%;
+  height:90px;
+  margin-left:auto;
+  margin-right: auto;
+  border-radius:10px;
+  opacity:.9;
+}
+
+nav>ul{
+  list-style-type: none;
+}
+nav>ul>li{
+  float:right;
+}
+nav>ul>li>a{
+  display:block;
+  font-size:100%;
+  text-decoration: none;
+  padding-right:10px;
+  color:orange
 }
 
 /*About Page*/
@@ -90,6 +119,7 @@ nav>ul>li>a{
   width:95%;
   margin-left:90px;
   margin-right:auto;
+  opacity: 0.8;
 }
 
 /*Results Page*/
@@ -166,6 +196,7 @@ nav>ul>li>a{
   font-weight: normal;
 }
 #descrip{
+<<<<<<< HEAD
   font-size:60;
 }
 .titlesinbox{
@@ -173,11 +204,16 @@ nav>ul>li>a{
   font-size:40;
   font-weight:normal;
 }
+
 /*make event page*/
-.mkevent{
+
+.make{
   background-color: lemonchiffon;
   height: 450px;
   width: 28%;
   margin-left: auto;
   margin-right: auto;
+}
+.titlesinbox{
+  text-align:center;
 }
