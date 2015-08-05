@@ -43,14 +43,21 @@ class HomePage(webapp2.RequestHandler):
         url = "https://www.eventbriteapi.com/v3/events/search?categories=107,108&venue.region=NY&q="
         # url = "https://www.eventbriteapi.com/v3/events/search?q="
         search_term = self.request.get("search")
-        cat = "&categories=107,108"
+        # cat = "&categories=107,108"
         api_key = "&token=QFYVYGNAS5ENNEEHHXLI"
-
         event_data_source = urlfetch.fetch(url + search_term +  api_key )
         event_json_content = event_data_source.content
         display = json.loads(event_json_content)
 
-        self.response.write(display)
+
+
+
+        parsed_event_dictionary = json.loads(event_json_content)
+        template = JINJA_ENVIRONMENT.get_template('results.html')
+        event_result = 'bowling'
+        dictionary = {'events':parsed_event_dictionary['events'][:10]}
+        self.response.write(template.render(dictionary))
+
 
 
 
@@ -76,14 +83,8 @@ class EventMaker(webapp2.RequestHandler):
         event_entry = Event(db_firstname=first_name, db_lastname=last_name, db_eventname=eventname, db_location=location,
          db_description=description, db_start_time=starttime, db_end_time=endtime, db_date=date, db_image=image)
         key=event_entry.put()
-
         # template = JINJA_ENVIRONMENT.get_template('view_event.html')
         # self.response.write(template.render())
-
-
-
-
-
         self.redirect('/view_event?id='+str(key.id()))
 
 class ViewEvent(webapp2.RequestHandler):
