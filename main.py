@@ -51,15 +51,16 @@ class HomePage(webapp2.RequestHandler):
 
 
 
-        parsed_event_dictionary = json.loads(event_json_content)
-        template = JINJA_ENVIRONMENT.get_template('results.html')
-
-        dictionary = {'events':parsed_event_dictionary['events'][:10]}
-        self.response.write(template.render(dictionary))
+        # parsed_event_dictionary = json.loads(event_json_content)
+        # template = JINJA_ENVIRONMENT.get_template('results.html')
+        #
+        # dictionary = {'events':parsed_event_dictionary['events'][:10]}
+        # self.response.write(template.render(dictionary))
 
         #search our database
+
         event_query = Event.query()
-        event_query = event_query.filter(search_term in Event.db_eventname)
+        event_query = event_query.filter(search_term in eventlist)
         event_data = event_query.fetch()
         self.response.write(event_data)
         # dictionary = {'events':parsed_event_dictionary['events'][:10]}

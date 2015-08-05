@@ -1,0 +1,15 @@
+{% endfor %}
+<div class="resultscontainer">
+  <h1 id="resultstitle">
+    Results
+  </h1>
+  {% for event in events: %}
+  <div id="oneevent">
+    <a href="/view_event?id={{event.key.id()}}">
+      <h2>{{event.db_eventname}}</h2>
+    </a>
+    <p>
+      {{event.db_date}}
+    </p>
+</div>
+  {% endfor %}
