@@ -40,10 +40,9 @@ class HomePage(webapp2.RequestHandler):
         template = JINJA_ENVIRONMENT.get_template('home.html')
         self.response.write(template.render())
     def post(self):
-        url = "https://www.eventbriteapi.com/v3/events/search?categories=107,108&venue.region=NY&q="
-        # url = "https://www.eventbriteapi.com/v3/events/search?q="
         search_term = self.request.get("search")
-        # cat = "&categories=107,108"
+        #search eventbrite API
+        url = "https://www.eventbriteapi.com/v3/events/search?categories=107,108&venue.region=NY&q="
         api_key = "&token=QFYVYGNAS5ENNEEHHXLI"
         event_data_source = urlfetch.fetch(url + search_term +  api_key )
         event_json_content = event_data_source.content
@@ -54,8 +53,18 @@ class HomePage(webapp2.RequestHandler):
 
         parsed_event_dictionary = json.loads(event_json_content)
         template = JINJA_ENVIRONMENT.get_template('results.html')
+
         dictionary = {'events':parsed_event_dictionary['events'][:10]}
         self.response.write(template.render(dictionary))
+
+        #search our database
+        event_query = Event.query()
+        event_query = event_query.filter(search_term in Event.db_eventname)
+        event_data = event_query.fetch()
+        self.response.write(event_data)
+        # dictionary = {'events':parsed_event_dictionary['events'][:10]}
+        # self.response.write(template.render(dictionary))
+
 
 
 
