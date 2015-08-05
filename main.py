@@ -54,7 +54,6 @@ class HomePage(webapp2.RequestHandler):
 
         parsed_event_dictionary = json.loads(event_json_content)
         template = JINJA_ENVIRONMENT.get_template('results.html')
-        event_result = 'bowling'
         dictionary = {'events':parsed_event_dictionary['events'][:10]}
         self.response.write(template.render(dictionary))
 
