@@ -49,14 +49,10 @@ class HomePage(webapp2.RequestHandler):
         event_json_content = event_data_source.content
         display = json.loads(event_json_content)
         parsed_event_dictionary = json.loads(event_json_content)
-        if len(parsed_event_dictionary) < 10:
-            for i in range(0,len(parsed_event_dictionary)):
-                eventobj = parsed_event_dictionary['events'][i]
-                self.response.write(eventobj)
-        else:
-            for i in range(0,10):
-                eventobj=parsed_event_dictionary['events'][i]
-                self.response.write(eventobj)
+        template = JINJA_ENVIRONMENT.get_template('results.html')
+        event_result = 'bowling'
+        dictionary = {'events':parsed_event_dictionary['events'][:10]}
+        self.response.write(template.render(dictionary))
 
 
 
@@ -82,14 +78,8 @@ class EventMaker(webapp2.RequestHandler):
         event_entry = Event(db_firstname=first_name, db_lastname=last_name, db_eventname=eventname, db_location=location,
          db_description=description, db_start_time=starttime, db_end_time=endtime, db_date=date, db_image=image)
         key=event_entry.put()
-
         # template = JINJA_ENVIRONMENT.get_template('view_event.html')
         # self.response.write(template.render())
-
-
-
-
-
         self.redirect('/view_event?id='+str(key.id()))
 
 class ViewEvent(webapp2.RequestHandler):
