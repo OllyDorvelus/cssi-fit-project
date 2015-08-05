@@ -49,6 +49,7 @@ class HomePage(webapp2.RequestHandler):
         event_data_source = urlfetch.fetch(url + search_term +  api_key )
         event_json_content = event_data_source.content
         display = json.loads(event_json_content)
+
         self.response.write(display)
 
 
