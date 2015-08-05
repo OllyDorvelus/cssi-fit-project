@@ -20,13 +20,13 @@ body{
 
 
 .find{
-  background-color: #C1E8C4;
+  background-color: #DCDCDC;
   box-shadow: 10px 10px 5px #888888;
   border-radius:10px;
   height:270px;
   width:40%;
   padding:100;
-  color:forestgreen;
+  color:indianred;
   margin-top:300px;
   display:block;
   float:left;
@@ -35,7 +35,7 @@ body{
 }
 
 .create{
-  background-color: #C1E8C4;
+  background-color: #DCDCDC;
   box-shadow: 10px 10px 5px #888888;
   border-radius:10px;
   height:270px;
