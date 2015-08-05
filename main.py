@@ -48,24 +48,21 @@ class HomePage(webapp2.RequestHandler):
         event_json_content = event_data_source.content
         display = json.loads(event_json_content)
 
-
-
-
-        # parsed_event_dictionary = json.loads(event_json_content)
-        # template = JINJA_ENVIRONMENT.get_template('results.html')
-        #
-        # dictionary = {'events':parsed_event_dictionary['events'][:10]}
-        # self.response.write(template.render(dictionary))
+        parsed_event_dictionary = json.loads(event_json_content)
+        template = JINJA_ENVIRONMENT.get_template('results.html')
 
         #search our database
-
         event_query = Event.query()
-        event_query = event_query.filter(search_term in eventlist)
         event_data = event_query.fetch()
-        self.response.write(event_data)
-        # dictionary = {'events':parsed_event_dictionary['events'][:10]}
-        # self.response.write(template.render(dictionary))
+        event_list = []
+        for eventobj in event_data:
+            if search_term in eventobj.db_eventname:
+                event_list.append(eventobj)
 
+        #results page
+        dictionary = {'events':parsed_event_dictionary['events'][:10],
+                       'moreevents':event_list}
+        self.response.write(template.render(dictionary))
 
 
 
@@ -112,8 +109,6 @@ class ResultsPage(webapp2.RequestHandler):
         event = event_query.fetch()
         template = JINJA_ENVIRONMENT.get_template('results.html')
         self.response.write(template.render({'events': event}))
-    # def get(post):
-    #     # All of the terms in the search query.
 
 class LoginHandler(webapp2.RequestHandler):
     def get(self):

@@ -14,13 +14,29 @@
   </head>
   <body>
 
-    {% for event in events: %}
+    <div class="resultscontainer">
+      <h1 class="resultstitle">
+        Results
+      </h1>
+      {% for event in events: %}
+      <div id="oneevent"
+      <a href="/viewapievent?id=">
+          <h2>{{event['name']['text']}}</h2>
+      </a>
+      <p>{{event['start']['datetime-tz']}}
+      </div>
+      {% endfor %}
 
-    <p>{{event['name']['text']}}</p>
-
-
-      <p>{{event['name']['text']}}</p>
-    {% endfor %}
+      {% for event in moreevents: %}
+      <div id="oneevent">
+        <a href="/view_event?id={{event.key.id()}}">
+          <h2>{{event.db_eventname}}</h2>
+        </a>
+        <p>
+          {{event.db_date}}
+        </p>
+    </div>
+      {% endfor %}
 
     </section>
     </body>
