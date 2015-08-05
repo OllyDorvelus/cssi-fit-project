@@ -47,6 +47,10 @@ class HomePage(webapp2.RequestHandler):
         event_data_source = urlfetch.fetch(url + search_term +  api_key )
         event_json_content = event_data_source.content
         display = json.loads(event_json_content)
+
+
+
+
         parsed_event_dictionary = json.loads(event_json_content)
         template = JINJA_ENVIRONMENT.get_template('results.html')
         #search our database
@@ -56,6 +60,7 @@ class HomePage(webapp2.RequestHandler):
         self.response.write(event_data)
         # dictionary = {'events':parsed_event_dictionary['events'][:10]}
         # self.response.write(template.render(dictionary))
+
 
 
 
