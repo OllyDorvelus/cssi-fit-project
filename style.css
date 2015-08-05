@@ -5,30 +5,81 @@
 }
 
 body{
-  background-image: url("http://hdpicorner.com/wp-content/uploads/2015/06/New-York-Night-Life.jpg");
-  background-size:100%;
+  background-image: url("https://res.cloudinary.com/roadtrippers/image/upload/v1430413567/secrets-of-central-park-everything-you-never-knew-about-new-york-citys-lush-oasis.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 /*HomePage*/
-#searchbox{
+
+.searchbox{
   margin-left:auto;
   margin-top:auto;
   height:auto;
   width:90%;
   text-align: center;
+  padding-top:10px;
+}
+
+.button{
+  color: lightseagreen;
+  /*border-width: 5px;*/
+  font-size: 2em;
+}
+
+#txt{
+  width:900px;
+  height:100px;
+  font-size:45px;
+}
+
+.find{
+  background-color: #DCDCDC;
+  box-shadow: 5px 5px 1px #888888;
+  border-radius:10px;
+  padding: 10px;
+  margin-bottom: 30px;
+  height:270px;
+  width:40%;
+  padding:100;
+  color:goldenrod;
+  margin-top:300px;
+  display:block;
+  float:left;
+  text-align:center;
+  opacity: 0.8;
+}
+
+.create{
+  background-color: #DCDCDC;
+  box-shadow: 5px 5px 1px #888888;
+  border-radius:10px;
+  padding: 10px;
+  height:270px;
+  width:40%;
+  padding:10px;
+  margin-right: 30px;
+  color:goldenrod;
+  margin-top:10px;
+  display:block;
+  float:right;
+  text-align:center;
+  opacity: 0.8;
 }
 
 /*Navigation Bar*/
 nav{
-  background-color: #000000;
+  background-color: #DCDCDC;
   width:95%;
   height:70px;
   margin-left:auto;
   margin-right: auto;
-  border-radius:10px;
+  border-radius:20px;
   opacity:.9;
   font-size:40px;
   padding-top:10px;
+  opacity: 0.8;
 }
 
 nav>ul{
@@ -43,62 +94,7 @@ nav>ul>li>a{
   font-size:100%;
   text-decoration: none;
   padding-right:10px;
-  color:#34518A;
-}
-
-.find{
-  background-color: #DCDCDC;
-  box-shadow: 10px 10px 5px #888888;
-  border-radius:10px;
-  height:270px;
-  width:40%;
-  padding:100;
-  color:indianred;
-  margin-top:300px;
-  display:block;
-  float:left;
-  text-align:center;
-  opacity: 0.8;
-}
-
-.create{
-  background-color: #DCDCDC;
-  box-shadow: 10px 10px 5px #888888;
-  border-radius:10px;
-  height:270px;
-  width:40%;
-  padding:100;
-  color:indianred;
-  margin-top:10px;
-  display:block;
-  float:right;
-  text-align:center;
-  opacity: 0.8;
-}
-
-/*Navigation Bar*/
-nav{
-  background-color: #070708;
-  width:95%;
-  height:90px;
-  margin-left:auto;
-  margin-right: auto;
-  border-radius:10px;
-  opacity:.9;
-}
-
-nav>ul{
-  list-style-type: none;
-}
-nav>ul>li{
-  float:right;
-}
-nav>ul>li>a{
-  display:block;
-  font-size:100%;
-  text-decoration: none;
-  padding-right:10px;
-  color:orange
+  color:orange;
 }
 
 /*About Page*/
