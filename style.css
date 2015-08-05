@@ -5,7 +5,7 @@
 }
 
 body{
-  background-image: url("/images/nyc_brooklyn_bridge.jpg");
+  background-image: url("http://hdpicorner.com/wp-content/uploads/2015/06/New-York-Night-Life.jpg");
   background-size:100%;
 }
 
@@ -16,6 +16,64 @@ body{
   height:auto;
   width:90%;
   text-align: center;
+}
+
+/*Navigation Bar*/
+nav{
+  background-color: #000000;
+  width:95%;
+  height:70px;
+  margin-left:auto;
+  margin-right: auto;
+  border-radius:10px;
+  opacity:.9;
+  font-size:40px;
+  padding-top:10px;
+}
+
+nav>ul{
+  list-style-type: none;
+}
+nav>ul>li{
+  float:right;
+  padding-right:15px;
+}
+nav>ul>li>a{
+  display:block;
+  font-size:100%;
+  text-decoration: none;
+  padding-right:10px;
+  color:#34518A;
+}
+
+.find{
+  background-color: #DCDCDC;
+  box-shadow: 10px 10px 5px #888888;
+  border-radius:10px;
+  height:270px;
+  width:40%;
+  padding:100;
+  color:indianred;
+  margin-top:300px;
+  display:block;
+  float:left;
+  text-align:center;
+  opacity: 0.8;
+}
+
+.create{
+  background-color: #DCDCDC;
+  box-shadow: 10px 10px 5px #888888;
+  border-radius:10px;
+  height:270px;
+  width:40%;
+  padding:100;
+  color:indianred;
+  margin-top:10px;
+  display:block;
+  float:right;
+  text-align:center;
+  opacity: 0.8;
 }
 
 /*Navigation Bar*/
@@ -43,34 +101,6 @@ nav>ul>li>a{
   color:orange
 }
 
-.find{
-  background-color: #C1E8C4;
-  box-shadow: 10px 10px 5px #888888;
-  border-radius:10px;
-  height:270px;
-  width:40%;
-  padding:100;
-  color:forestgreen;
-  margin-top:300px;
-  display:block;
-  float:left;
-  text-align:center;
-}
-
-.create{
-  background-color: #C1E8C4;
-  box-shadow: 10px 10px 5px #888888;
-  border-radius:10px;
-  height:270px;
-  width:40%;
-  padding:100;
-  color:indianred;
-  margin-top:10px;
-  display:block;
-  float:right;
-  text-align:center;
-}
-
 /*About Page*/
 .bio{
   display:block;
@@ -89,12 +119,36 @@ nav>ul>li>a{
   width:95%;
   margin-left:90px;
   margin-right:auto;
+  opacity: 0.8;
 }
 
+/*Results Page*/
+#resultstitle{
+  color:#34518A;
+
+}
+#oneevent{
+  height:auto;
+  width:50%;
+  padding:10px 10px;
+  background-color:#FFFFFF;
+  border-radius:10px;
+  margin-top:10px;
+  margin-left:auto;
+  margin-right:auto;
+}
+.resultscontainer{
+  margin-top:30px;
+  height:auto;
+  opacity:.8;
+  padding:10px 30px 50px;
+  text-align: center;
+  background-color:#34518A;
+}
 /*ViewEvent Page*/
 .eventboxes{
   height:auto;
-  padding:45px 25px 100px;
+  padding:10px 10px;
   width:auto;
   border-radius:10px;
 }
@@ -113,6 +167,9 @@ nav>ul>li>a{
   opacity:.8;
   background-color:#000000;
   color:#FFFFFF;
+  width:45%;
+  text-align:right;
+
 }
 #eventbox2{
   display:block;
@@ -122,24 +179,35 @@ nav>ul>li>a{
   opacity:.8;
   background-color:#000000;
   color:#FFFFFF;
+  text-align: left;
 }
 #titlebox{
   background-color:#FFFFFF;
   margin-left:auto;
   margin-right:auto;
   opacity:.9;
+  padding:10px 20px;
 }
 #title{
-  color:blue;
-  font-size:40px;
+  color:#34518A;
+  font-size:60px;
 }
 #name{
   font-weight: normal;
 }
 #descrip{
-  font-size:20px;
+<<<<<<< HEAD
+  font-size:60;
+}
+.titlesinbox{
+  text-align:center;
+  font-size:40;
+  font-weight:normal;
+}
+
 /*make event page*/
-.mkevent{
+
+.make{
   background-color: lemonchiffon;
   height: 450px;
   width: 28%;
