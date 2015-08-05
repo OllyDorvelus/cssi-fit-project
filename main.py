@@ -40,13 +40,13 @@ class HomePage(webapp2.RequestHandler):
         template = JINJA_ENVIRONMENT.get_template('home.html')
         self.response.write(template.render())
     def post(self):
-        # url = "https://www.eventbriteapi.com/v3/events/search?categories=107,108&q="
-        url = "https://www.eventbriteapi.com/v3/events/search?q="
-        search_term = "search"
+        url = "https://www.eventbriteapi.com/v3/events/search?categories=107,108&venue.region=NY&q="
+        # url = "https://www.eventbriteapi.com/v3/events/search?q="
+        search_term = self.request.get("search")
         cat = "&categories=107,108"
         api_key = "&token=QFYVYGNAS5ENNEEHHXLI"
 
-        event_data_source = urlfetch.fetch(url + "search" +  api_key )
+        event_data_source = urlfetch.fetch(url + search_term +  api_key )
         event_json_content = event_data_source.content
         display = json.loads(event_json_content)
         self.response.write(display)
