@@ -19,11 +19,11 @@
         Results
       </h1>
       {% for event in events: %}
-      <div id="oneevent"
-      <a href="/viewapievent?id=">
+      <div id="oneevent">
+      <a href="/viewapievent?id={{event['id']}}">
           <h2>{{event['name']['text']}}</h2>
       </a>
-      <p>{{event['start']['datetime-tz']}}
+      <p>{{event['start']['datetime-tz']}}</p>
       </div>
       {% endfor %}
 

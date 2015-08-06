@@ -63,7 +63,7 @@ class HomePage(webapp2.RequestHandler):
         event_data = event_query.fetch()
         event_list = []
         for eventobj in event_data:
-            if search_term in eventobj.db_eventname:
+            if search_term in eventobj.db_eventname or search_term in eventobj.db_description:
                 event_list.append(eventobj)
 
         #results page
@@ -71,7 +71,10 @@ class HomePage(webapp2.RequestHandler):
                        'moreevents':event_list}
         self.response.write(template.render(dictionary))
 
-
+class PracticeHandler(webapp2.RequestHandler):
+    def get(self):
+        event_id = int(self.request.get('id'))
+        self.response.write(event_id)
 
 
 class AboutPage(webapp2.RequestHandler):
@@ -110,14 +113,20 @@ class ViewEvent(webapp2.RequestHandler):
         template = JINJA_ENVIRONMENT.get_template('view_event.html')
         self.response.write(template.render({'event':event}))
 
-
+class ViewApiEvent(webapp2.RequestHandler):
+    def get(self):
+        event_id=int(self.request.get('id'))
+        url = 'https://www.eventbriteapi.com/v3/events/:'
+        event = url+event_id+'/'
+        self.response.write(event)
+        template = JINJA_ENVIRONMENT.get_template('viewapievent.html')
+        self.response.write(template.render({'event':event}))
 class ResultsPage(webapp2.RequestHandler):
     def get(self):
         event_query = Event.query()
         event = event_query.fetch()
         template = JINJA_ENVIRONMENT.get_template('results.html')
         self.response.write(template.render({'events': event}))
-
 class LoginHandler(webapp2.RequestHandler):
     def get(self):
         user = users.get_current_user()
@@ -130,7 +139,7 @@ class LoginHandler(webapp2.RequestHandler):
         self.response.out.write("<html><body>%s</body></html>" % greeting)
         template = JINJA_ENVIRONMENT.get_template('login.html')
         self.response.write(template.render())
-        
+
 
 app = webapp2.WSGIApplication([
     ('/', HomePage),
@@ -139,4 +148,6 @@ app = webapp2.WSGIApplication([
     ('/view_event', ViewEvent),
     ('/about', AboutPage),
     ('/login', LoginHandler),
+    ('/viewevent', ViewApiEvent),
+    ('/practice', PracticeHandler)
 ], debug=True)
