@@ -13,6 +13,15 @@ handlers:
 - url: /style\.css
   static_files: style.css
   upload: style\.css
+
+- url: /jqfloat/jqfloat\.js
+  static_files: jqfloat/jqfloat.js
+  upload: jqfloat/jqfloat\.js
+
+- url: /animations\.js
+  static_files: animations.js
+  upload: animations\.js
+
 - url: .*
   script: main.app
 
