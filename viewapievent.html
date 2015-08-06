@@ -17,9 +17,9 @@
 <section>
 <div id="eventbox">
   <div id="titlebox">
-    <h1 id="title">{{event['name']['text']}</h1>
-    <h2 id="name">By {{event}} {{event.db_lastname}}</h2>
-    <p>Start Time: {{event[start]['local']}}
+    <h1 id="title">{{event['name']['text']}}</h1>
+    <!-- <h2 id="name">By {{event}} {{event.db_lastname}}</h2> -->
+    <p>Start Time: {{event['start']['local']}}
       {%if event['end']['local']:%}
         to {{event['end']['local']}}
       {%endif%}</p>
@@ -33,7 +33,7 @@
   <div class="eventboxes" id="eventbox2">
     <h2 class="titlesinbox">DESCRIPTION</h2>
     <br>
-    <p id="descrip">{{event['discription']['text']}}</p>
+    <p id="descrip">{{event['description']['text']}}</p>
   </div>
 </div>
 
