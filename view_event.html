@@ -23,12 +23,12 @@
       {%if event.db_end_time:%}
         to {{event.db_end_time}}
       {%endif%}</p>
-    <img src={{image}}/>
+    <p><{{event.db_image}}</p>
   </div>
   <div class="eventboxes" id="eventbox1">
     <h2 class="titlesinbox">LOCATION</h2>
     <br>
-    <p>{{event.db_location}}</p>
+    <p>{{event.db_location}}{{event.db_date}}</p>
   </div>
   <div class="eventboxes" id="eventbox2">
     <h2 class="titlesinbox">DESCRIPTION</h2>

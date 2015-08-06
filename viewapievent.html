@@ -1,14 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title></title>
+<title>{{event.db_eventname}}</title>
+<link href='http://fonts.googleapis.com/css?family=Cabin:400,700' rel='stylesheet' type='text/css'><link rel="stylesheet" type="text/css" href=style.css>
+<nav>
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/eventmaker">Create</a></li>
+    <li><a href="/login">Login</a></li>
+  <ul>
+</nav>
 </head>
 <body>
+<h1></h1>
+<section>
+<div id="eventbox">
+  <div id="titlebox">
+    <h1 id="title">{{event['name']['text']}</h1>
+    <h2 id="name">By {{event}} {{event.db_lastname}}</h2>
+    <p>Start Time: {{event[start]['local']}}
+      {%if event['end']['local']:%}
+        to {{event['end']['local']}}
+      {%endif%}</p>
+    <img src={{event['logo']['url']}}/>
+  </div>
+  <div class="eventboxes" id="eventbox1">
+    <h2 class="titlesinbox">LOCATION</h2>
+    <br>
+    <p>{{event.db_location}}</p>
+  </div>
+  <div class="eventboxes" id="eventbox2">
+    <h2 class="titlesinbox">DESCRIPTION</h2>
+    <br>
+    <p id="descrip">{{event['discription']['text']}}</p>
+  </div>
+</div>
 
-
-
-
-
-
-<body>
+<section>
+</body>
 </html>

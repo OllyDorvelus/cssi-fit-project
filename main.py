@@ -2,9 +2,16 @@
 import os
 import jinja2
 import webapp2
+# import sys
+#
+# import sys
+#
+# reload(sys)
+# sys.setdefaultencoding('byte_string')
 from google.appengine.api import users
 from google.appengine.ext import ndb
 from google.appengine.api import urlfetch
+import urllib
 import json
 
 
@@ -32,7 +39,7 @@ class Event(ndb.Model):
     db_start_time = ndb.StringProperty(required=True)
     db_end_time = ndb.StringProperty(required=True)
     db_date = ndb.StringProperty(required=True)
-    db_image = ndb.BlobProperty(required=False)
+    db_image = ndb.StringProperty(required=False)
 
 
 class HomePage(webapp2.RequestHandler):
@@ -81,11 +88,12 @@ class EventMaker(webapp2.RequestHandler):
         last_name = self.request.get('lastname')
         eventname = self.request.get('event_name')
         location = self.request.get('location')
-        starttime = self.request.get('start_time')
-        endtime = self.request.get('end_time')
+        starttime = str(self.request.get('start_time'))
+        endtime = str(self.request.get('end_time'))
         description = self.request.get('descrip')
-        date = self.request.get('date_time')
-        image = str(self.request.get('img'))
+        date = str(self.request.get('date_time'))
+        image = self.request.get('img')
+
         event_entry = Event(db_firstname=first_name, db_lastname=last_name, db_eventname=eventname, db_location=location,
          db_description=description, db_start_time=starttime, db_end_time=endtime, db_date=date, db_image=image)
         key=event_entry.put()
