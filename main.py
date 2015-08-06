@@ -10,6 +10,7 @@ import webapp2
 from google.appengine.api import users
 from google.appengine.ext import ndb
 from google.appengine.api import urlfetch
+from google.appengine.api import images
 import urllib
 import json
 
@@ -31,7 +32,7 @@ class Event(ndb.Model):
     db_start_time = ndb.StringProperty(required=True)
     db_end_time = ndb.StringProperty(required=True)
     db_date = ndb.StringProperty(required=True)
-    db_image = ndb.StringProperty(required=False)
+    db_image = ndb.BlobProperty(required=False)
 
 class HomePage(webapp2.RequestHandler):
     def get(self):
@@ -102,13 +103,7 @@ class ViewEvent(webapp2.RequestHandler):
 class ViewApiEvent(webapp2.RequestHandler):
     def get(self):
         event_id=int(self.request.get('id'))
-<<<<<<< HEAD
-        url = 'https://www.eventbriteapi.com/v3/events/:'
-        event = url+event_id+'/'
-        self.response.write(event)
-        template = JINJA_ENVIRONMENT.get_template('viewapievent.html')
-        self.response.write(template.render({'event':event}))
-=======
+
         url = 'https://www.eventbriteapi.com/v3/events/'
         api_key = "?token=QFYVYGNAS5ENNEEHHXLI"
         event=urlfetch.fetch(url+str(event_id)+api_key)
@@ -116,7 +111,7 @@ class ViewApiEvent(webapp2.RequestHandler):
         template = JINJA_ENVIRONMENT.get_template('viewapievent.html')
         self.response.write(template.render({'event':event}))
 
->>>>>>> 67c4d52b3dfc6eda602d15c01df5ec4cffe58e71
+
 class ResultsPage(webapp2.RequestHandler):
     def get(self):
         event_query = Event.query()
@@ -135,10 +130,7 @@ class LoginHandler(webapp2.RequestHandler):
         self.response.out.write("<html><body>%s</body></html>" % greeting)
         template = JINJA_ENVIRONMENT.get_template('login.html')
         self.response.write(template.render())
-<<<<<<< HEAD
 
-=======
->>>>>>> 67c4d52b3dfc6eda602d15c01df5ec4cffe58e71
 
 app = webapp2.WSGIApplication([
     ('/', HomePage),
@@ -148,6 +140,5 @@ app = webapp2.WSGIApplication([
     ('/viewapievent', ViewApiEvent),
     ('/about', AboutPage),
     ('/login', LoginHandler),
-    ('/viewevent', ViewApiEvent),
     ('/practice', PracticeHandler)
 ], debug=True)
