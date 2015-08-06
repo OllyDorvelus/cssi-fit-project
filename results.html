@@ -3,6 +3,7 @@
   <head>
     <title>Events</title>
     <link rel="stylesheet" type="text/css" href= "style.css">
+        <link href='http://fonts.googleapis.com/css?family=Josefin+Sans:700,300' rel='stylesheet' type='text/css'>
     <nav>
       <ul>
         <li><a href="/">Home</a></li>
@@ -20,7 +21,7 @@
       </h1>
       {% for event in events: %}
       <div id="oneevent">
-      <a href="/viewapievent?id={{event['id']}}">
+      <a href="/viewapievent?id={{event['id']}}" class="results">
           <h2>{{event['name']['text']}}</h2>
       </a>
       <p>{{event['start']['datetime-tz']}}</p>
@@ -29,7 +30,7 @@
 
       {% for event in moreevents: %}
       <div id="oneevent">
-        <a href="/view_event?id={{event.key.id()}}">
+        <a href="/view_event?id={{event.key.id()}}" class="results">
           <h2>{{event.db_eventname}}</h2>
         </a>
         <p>

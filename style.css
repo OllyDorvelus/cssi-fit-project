@@ -170,6 +170,15 @@ nav>ul>li>a{
 }
 
 /*Results Page*/
+#oneevent a:link {
+  text-decoration: none;
+  color:black;
+}
+#oneevent a:visited{
+  text-decoration: none;
+  color:black;
+}
+
 #resultstitle{
   color:#34518A;
 
