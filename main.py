@@ -116,10 +116,12 @@ class ViewEvent(webapp2.RequestHandler):
 class ViewApiEvent(webapp2.RequestHandler):
     def get(self):
         event_id=int(self.request.get('id'))
-        url = 'https://www.eventbriteapi.com/v3/events/:'
-        event = url+event_id+'/'
-        self.response.write(event)
+        url = 'https://www.eventbriteapi.com/v3/events/:id/'
+        event = url+event_id
+        self.response.write(url)
         # template = JINJA_ENVIRONMENT.get_template('viewapievent.html')
+        # self.response.write(template.render({'event':event}))
+
 class ResultsPage(webapp2.RequestHandler):
     def get(self):
         event_query = Event.query()
@@ -139,7 +141,7 @@ class LoginHandler(webapp2.RequestHandler):
         self.response.out.write("<html><body>%s</body></html>" % greeting)
         template = JINJA_ENVIRONMENT.get_template('login.html')
         self.response.write(template.render())
-        
+
 
 app = webapp2.WSGIApplication([
     ('/', HomePage),
