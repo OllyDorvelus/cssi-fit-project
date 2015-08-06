@@ -27,6 +27,9 @@ body{
   color: lightseagreen;
   /*border-width: 5px;*/
   font-size: 2em;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
 }
 
 #searchtext{
@@ -263,6 +266,18 @@ width:95%;
   text-align:center;
   font-size:40;
   font-weight:normal;
+}
+
+/*view event api*/
+
+#descrip{
+  font-size: 25px;
+}
+
+#eventbox2{
+  width: 1200px;
+  margin-right: 100px;
+  margin-bottom: 100px;
 }
 
 /*make event page*/
