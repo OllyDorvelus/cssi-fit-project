@@ -16,7 +16,7 @@
 </head>
 <body>
 <div class="make"><h1 style=text-align:center>Make an Event!</h1>
-<form class="mkevent" method="post" enctype="multipart/form-data">
+ <form class="mkevent" method="post" enctype="multipart/form-data" accept-charset="ascii"> 
 First Name:<br>
 <input type="text" name="firstname">
 <br>
@@ -26,18 +26,21 @@ Event Name<br>
 <input type="text" name="event_name">
 <br>
 Date:<br>
-<input type ="text" name="date_time"><br>
+<input type ="date" name="date_time"><br>
 Start Time:<br>
-<input type ="text" name="start_time"><br>
+<input type ="time" name="start_time"><br>
 End Time:<br>
-<input type="text" name="end_time"><br>
+<input type="time" name="end_time"><br>
 Location:<br>
 <input type="text" name="location"><br>
 Description:<br>
 <textarea name="descrip" rows="7" cols="60"></textarea><br>
-Upload Image:<br>
+ Upload Image:<br>
 <input type="file" name="img" accept="image/gif, image/jpeg, image/png"><br><br>
+
 <input type="submit" name="sub" value="Submit">
+</form>
+
 </form></div>
 </body>
 </html>
