@@ -67,6 +67,7 @@ body{
   float:left;
   text-align:center;
   opacity: 0.8;
+  color: #233582;
 }
 
 #findimage{
@@ -128,7 +129,7 @@ nav{
 }
 
 #vitality{
-  color: goldenrod;
+  color: #233582;
   margin-left: 15px;
 }
 
