@@ -55,7 +55,7 @@ class HomePage(webapp2.RequestHandler):
             if search_term in eventobj.db_eventname or search_term in eventobj.db_description:
                 event_list.append(eventobj)
         #results page
-        dictionary = {'events':parsed_event_dictionary['events'][:10],
+        dictionary = {'events':parsed_event_dictionary['events'][:30],
                        'moreevents':event_list}
         self.response.write(template.render(dictionary))
 

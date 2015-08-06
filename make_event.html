@@ -3,6 +3,7 @@
 <head>
 <title>Make an Event</title>
 <link rel= "stylesheet" type="text/css" href="style.css">
+    <link href='http://fonts.googleapis.com/css?family=Josefin+Sans:700,300' rel='stylesheet' type='text/css'>
 <script language="javascript" type="text/javascript" src="jquery-1.8.3.js"></script>
 <script src="test.js"></script>
 <nav>
@@ -16,7 +17,9 @@
 </head>
 <body>
 <div class="make"><h1 style=text-align:center>Make an Event!</h1>
- <form class="mkevent" method="post" enctype="multipart/form-data">
+
+ <form class="mkevent" method="post">
+
 First Name:<br>
 <input type="text" name="firstname">
 <br>
@@ -35,8 +38,8 @@ Location:<br>
 <input type="text" name="location"><br>
 Description:<br>
 <textarea name="descrip" rows="7" cols="60"></textarea><br>
- Upload Image:<br>
-<input type="file" name="img" accept="image/gif, image/jpeg, image/png"><br><br>
+ <!-- Upload Image:<br>
+<input type="file" name="img" accept="image/gif, image/jpeg, image/png"><br><br> -->
 
 <input type="submit" name="sub" value="Create Event!">
 </form>
