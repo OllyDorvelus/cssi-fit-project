@@ -148,22 +148,26 @@ nav>ul>li>a{
 }
 
 /*About Page*/
+#aboutcontainer{
+height:100px;
+width:95%;
+}
 .bio{
   display:block;
   float:left;
   height:400px;
-  width:30%;
+  width:25%;
   border:solid;
   border-radius:10px;
-  margin-left:auto;
+  margin-left:3px;
   margin-right:auto;
-  background-color:#C1E8C4;
+  background-color:#FFFFFF;
 }
 
 #biocontainer{
   height:400px;
-  width:95%;
-  margin-left:90px;
+  width:90%;
+  margin-left:auto;
   margin-right:auto;
   opacity: 0.8;
 }
