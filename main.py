@@ -2,9 +2,16 @@
 import os
 import jinja2
 import webapp2
+# import sys
+#
+# import sys
+#
+# reload(sys)
+# sys.setdefaultencoding('byte_string')
 from google.appengine.api import users
 from google.appengine.ext import ndb
 from google.appengine.api import urlfetch
+import urllib
 import json
 
 
@@ -32,7 +39,7 @@ class Event(ndb.Model):
     db_start_time = ndb.StringProperty(required=True)
     db_end_time = ndb.StringProperty(required=True)
     db_date = ndb.StringProperty(required=True)
-    db_image = ndb.BlobProperty(required=False)
+    db_image = ndb.StringProperty(required=False)
 
 
 class HomePage(webapp2.RequestHandler):
@@ -47,14 +54,16 @@ class HomePage(webapp2.RequestHandler):
         event_data_source = urlfetch.fetch(url + search_term +  api_key )
         event_json_content = event_data_source.content
         display = json.loads(event_json_content)
+
         parsed_event_dictionary = json.loads(event_json_content)
         template = JINJA_ENVIRONMENT.get_template('results.html')
+
         #search our database
         event_query = Event.query()
         event_data = event_query.fetch()
         event_list = []
         for eventobj in event_data:
-            if search_term in eventobj.db_eventname:
+            if search_term in eventobj.db_eventname or search_term in eventobj.db_description:
                 event_list.append(eventobj)
 
         #results page
@@ -62,6 +71,10 @@ class HomePage(webapp2.RequestHandler):
                        'moreevents':event_list}
         self.response.write(template.render(dictionary))
 
+class PracticeHandler(webapp2.RequestHandler):
+    def get(self):
+        event_id = int(self.request.get('id'))
+        self.response.write(event_id)
 
 
 class AboutPage(webapp2.RequestHandler):
@@ -78,11 +91,12 @@ class EventMaker(webapp2.RequestHandler):
         last_name = self.request.get('lastname')
         eventname = self.request.get('event_name')
         location = self.request.get('location')
-        starttime = self.request.get('start_time')
-        endtime = self.request.get('end_time')
+        starttime = str(self.request.get('start_time'))
+        endtime = str(self.request.get('end_time'))
         description = self.request.get('descrip')
-        date = self.request.get('date_time')
-        image = str(self.request.get('img'))
+        date = str(self.request.get('date_time'))
+        image = self.request.get('img')
+
         event_entry = Event(db_firstname=first_name, db_lastname=last_name, db_eventname=eventname, db_location=location,
          db_description=description, db_start_time=starttime, db_end_time=endtime, db_date=date, db_image=image)
         key=event_entry.put()
@@ -99,7 +113,13 @@ class ViewEvent(webapp2.RequestHandler):
         template = JINJA_ENVIRONMENT.get_template('view_event.html')
         self.response.write(template.render({'event':event}))
 
-
+class ViewApiEvent(webapp2.RequestHandler):
+    def get(self):
+        event_id=int(self.request.get('id'))
+        url = 'https://www.eventbriteapi.com/v3/events/:'
+        event = url+event_id+'/'
+        self.response.write(event)
+        # template = JINJA_ENVIRONMENT.get_template('viewapievent.html')
 class ResultsPage(webapp2.RequestHandler):
     def get(self):
         event_query = Event.query()
@@ -119,7 +139,7 @@ class LoginHandler(webapp2.RequestHandler):
         self.response.out.write("<html><body>%s</body></html>" % greeting)
         template = JINJA_ENVIRONMENT.get_template('login.html')
         self.response.write(template.render())
-
+        
 
 app = webapp2.WSGIApplication([
     ('/', HomePage),
@@ -128,4 +148,5 @@ app = webapp2.WSGIApplication([
     ('/view_event', ViewEvent),
     ('/about', AboutPage),
     ('/login', LoginHandler),
+    ('/practice', PracticeHandler)
 ], debug=True)
