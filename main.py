@@ -10,6 +10,7 @@ import webapp2
 from google.appengine.api import users
 from google.appengine.ext import ndb
 from google.appengine.api import urlfetch
+from google.appengine.api import images
 import urllib
 import json
 
@@ -31,7 +32,7 @@ class Event(ndb.Model):
     db_start_time = ndb.StringProperty(required=True)
     db_end_time = ndb.StringProperty(required=True)
     db_date = ndb.StringProperty(required=True)
-    db_image = ndb.StringProperty(required=False)
+    db_image = ndb.BlobProperty(required=False)
 
 class HomePage(webapp2.RequestHandler):
     def get(self):
@@ -102,6 +103,7 @@ class ViewEvent(webapp2.RequestHandler):
 class ViewApiEvent(webapp2.RequestHandler):
     def get(self):
         event_id=int(self.request.get('id'))
+
         url = 'https://www.eventbriteapi.com/v3/events/'
         api_key = "?token=QFYVYGNAS5ENNEEHHXLI"
         event=urlfetch.fetch(url+str(event_id)+api_key)
@@ -109,13 +111,13 @@ class ViewApiEvent(webapp2.RequestHandler):
         template = JINJA_ENVIRONMENT.get_template('viewapievent.html')
         self.response.write(template.render({'event':event}))
 
+
 class ResultsPage(webapp2.RequestHandler):
     def get(self):
         event_query = Event.query()
         event = event_query.fetch()
         template = JINJA_ENVIRONMENT.get_template('results.html')
         self.response.write(template.render({'events': event}))
-
 class LoginHandler(webapp2.RequestHandler):
     def get(self):
         user = users.get_current_user()
@@ -128,6 +130,7 @@ class LoginHandler(webapp2.RequestHandler):
         self.response.out.write("<html><body>%s</body></html>" % greeting)
         template = JINJA_ENVIRONMENT.get_template('login.html')
         self.response.write(template.render())
+
 
 app = webapp2.WSGIApplication([
     ('/', HomePage),
