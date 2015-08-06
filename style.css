@@ -28,27 +28,48 @@ body{
   font-size: 2em;
 }
 
+#searchtext{
+  font-size: 30px;
+}
+
 #txt{
   width:900px;
   height:100px;
   font-size:45px;
 }
 
+#cloudone{
+  margin-left: 50px;
+}
+
+#cloudtwo{
+  position: fixed;
+  left: 500px;
+}
+
 .find{
   background-color: #DCDCDC;
   box-shadow: 5px 5px 1px #888888;
   border-radius:10px;
-  padding: 10px;
-  margin-bottom: 30px;
+  padding-top: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
   height:270px;
   width:40%;
-  padding:100;
   color:goldenrod;
   margin-top:300px;
+  margin-left: 30px;
+  margin-right: 50px;
+  margin-bottom: 150px;
   display:block;
   float:left;
   text-align:center;
   opacity: 0.8;
+}
+
+#findimage{
+  height: 200px;
+  width: 50%;
 }
 
 .create{
@@ -61,7 +82,6 @@ body{
   padding:10px;
   margin-right: 30px;
   color:goldenrod;
-  margin-top:10px;
   display:block;
   float:right;
   text-align:center;
@@ -75,6 +95,7 @@ nav{
   height:70px;
   margin-left:auto;
   margin-right: auto;
+  margin-top:5px;
   border-radius:20px;
   opacity:.9;
   font-size:40px;
@@ -205,10 +226,13 @@ nav>ul>li>a{
 
 .make{
   background-color: lemonchiffon;
+  padding: 12px;
+  margin-top: 50px;
   height: 450px;
   width: 28%;
   margin-left: auto;
   margin-right: auto;
+  opacity: 0.8;
 }
 .titlesinbox{
   text-align:center;
