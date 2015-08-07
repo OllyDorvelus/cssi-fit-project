@@ -197,6 +197,17 @@ width:95%;
   display:block;
   padding:0px 10px 10px
 }
+
+#jolipic{
+  height:194px;
+  width:188px;
+  border-radius:200px;
+  margin-left:auto;
+  margin-right:auto;
+  display:block;
+  padding:0px 10px 10px
+}
+
 /*Results Page*/
 #oneevent a:link {
   text-decoration: none;
