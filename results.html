@@ -22,10 +22,10 @@
       </h1>
       {% for event in events: %}
       <div id="oneevent">
-      <a href="/viewapievent?id={{event['id']}}" class="results">
+      <a href="/viewapievent?id={{event['id']}}&v={{event['venue_id']}}" class="results">
           <h2>{{event['name']['text']}}</h2>
       </a>
-      <p>{{event['venue_id']['name']}}</p>
+      <p>{{event.venue_id.name}}</p>
       </div>
       {% endfor %}
 
