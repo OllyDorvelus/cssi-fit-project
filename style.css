@@ -163,6 +163,7 @@ width:95%;
   margin-left:3px;
   margin-right:auto;
   background-color:#FFFFFF;
+  padding:10px 10px;
 }
 
 #biocontainer{
@@ -172,7 +173,15 @@ width:95%;
   margin-right:auto;
   opacity: 0.8;
 }
-
+#caylapic{
+  height:194px;
+  width:188px;
+  border-radius:200px;
+  margin-left:auto;
+  margin-right:auto;
+  display:block;
+  padding:0px 10px 10px
+}
 /*Results Page*/
 #oneevent a:link {
   text-decoration: none;
