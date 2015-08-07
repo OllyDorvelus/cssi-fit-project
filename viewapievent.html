@@ -10,6 +10,7 @@
     <li><a href="/about">About</a></li>
     <li><a href="/eventmaker">Create</a></li>
     <li><a href="/login">Login</a></li>
+    <li><a href="/fittips">Fit Tips</a></li>
   </ul>
   <p id="vitality" >VITALITY</p>
 </nav>
@@ -23,7 +24,7 @@
     <!-- <h2 id="name">By {{event}} {{event.db_lastname}}</h2> -->
     <p>Start Time: {{event['start']['local']}}
       {%if event['end']['local']:%}
-        to {{event['end']['local']}}
+        to <br>{{event['end']['local']}}
       {%endif%}</p>
   <p>  <img src={{event['logo']['url']}} > </p>
   </div>

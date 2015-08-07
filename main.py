@@ -10,13 +10,15 @@ import webapp2
 from google.appengine.api import users
 from google.appengine.ext import ndb
 from google.appengine.api import urlfetch
+from google.appengine.ext import blobstore
+from google.appengine.ext.webapp import blobstore_handlers
 import urllib
 import json
 
 # from google.appengine.ext import blobstore
 # from google.appengine.ext.webapp import blobstore_handlers
 # from google.appengine.ext.webapp.util import run_wsgi_app
-
+# upload_url = blobstore.create_upload_url('/img')
 JINJA_ENVIRONMENT = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
     extensions=['jinja2.ext.autoescape'],
@@ -117,6 +119,10 @@ class ResultsPage(webapp2.RequestHandler):
         event = event_query.fetch()
         template = JINJA_ENVIRONMENT.get_template('results.html')
         self.response.write(template.render({'events': event}))
+class FitTips(webapp2.RequestHandler):
+    def get(self):
+        template = JINJA_ENVIRONMENT.get_template('fun.html')
+        self.response.write(template.render())
 class LoginHandler(webapp2.RequestHandler):
     def get(self):
         user = users.get_current_user()
@@ -130,14 +136,27 @@ class LoginHandler(webapp2.RequestHandler):
         template = JINJA_ENVIRONMENT.get_template('login.html')
         self.response.write(template.render())
 
+# [START image_handler]
+class Image(webapp2.RequestHandler):
+    def get(self):
+        event_key = ndb.Key(urlsafe=self.request.get('event_url_key'))
+        event = event_key.get()
+        if event.db_image:
+            self.response.headers['Content-Type'] = 'image/png'
+            self.response.out.write(event.db_image)
+        else:
+            self.response.out.write('No image')
+# [END image_handler]
 
 app = webapp2.WSGIApplication([
     ('/', HomePage),
+    ('/img', Image),
     ('/eventmaker', EventMaker),
     ('/results', ResultsPage),
     ('/view_event', ViewEvent),
     ('/viewapievent', ViewApiEvent),
     ('/about', AboutPage),
     ('/login', LoginHandler),
-    ('/practice', PracticeHandler)
+    ('/practice', PracticeHandler),
+    ('/fittips', FitTips)
 ], debug=True)

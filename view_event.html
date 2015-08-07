@@ -12,6 +12,7 @@
       <li><a href="/about">About</a></li>
       <li><a href="/eventmaker">Create</a></li>
       <li><a href="/login">Login</a></li>
+      <li><a href="/fittips">Fit Tips</a></li>
     <ul>
   </nav>
 <section>
@@ -23,7 +24,7 @@
       {%if event.db_end_time:%}
         to {{event.db_end_time}}
       {%endif%}</p>
-    
+    <div><img src="/img?event_url_key={{event.key.urlsafe()}}"></img></div>
   </div>
   <div class="eventboxes" id="eventbox1">
     <h2 class="titlesinbox">LOCATION</h2>
