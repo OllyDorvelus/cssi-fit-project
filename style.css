@@ -156,10 +156,22 @@ nav>ul>li>a{
 height:100px;
 width:95%;
 }
+#aboutblock{
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #FFFFFF;
+  border-radius:10px;
+  opacity:.9;
+  height:500px;
+  width:80%;
+  text-align: center;
+  padding:10px 10px;
+  margin-top:20px;
+}
 .bio{
   display:block;
   float:left;
-  height:400px;
+  height:350px;
   width:25%;
   border:solid;
   border-radius:10px;
@@ -171,14 +183,14 @@ width:95%;
 
 #biocontainer{
   height:400px;
-  width:90%;
+  width:auto;
   margin-left:auto;
   margin-right:auto;
   opacity: 0.8;
 }
 #caylapic{
-  height:194px;
-  width:188px;
+  height:155px;
+  width:150px;
   border-radius:200px;
   margin-left:auto;
   margin-right:auto;
@@ -246,7 +258,7 @@ width:95%;
 #eventbox2{
   display:block;
   float:right;
-  margin-top:200px;
+  margin-top:20px;
   width:40%;
   opacity:.8;
   background-color:#000000;

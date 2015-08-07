@@ -103,19 +103,17 @@ class ViewEvent(webapp2.RequestHandler):
 class ViewApiEvent(webapp2.RequestHandler):
     def get(self):
         event_id=int(self.request.get('id'))
-        venue_id= int(self.request.get('v'))
+        # venue_id= int(self.request.get('v'))
         url = 'https://www.eventbriteapi.com/v3/events/'
         api_key = "?token=QFYVYGNAS5ENNEEHHXLI"
         event=urlfetch.fetch(url+str(event_id)+api_key)
         event = json.loads(event.content)
 
-        urlv = 'https://www.eventbriteapi.com/v3/venues/'
-        venue=urlfetch.fetch(urlv+str(venue_id)+api_key)
-        venue=json.loads(venue.content)
+        # urlv = 'https://www.eventbriteapi.com/v3/venues/'
+        # venue=urlfetch.fetch(urlv+str(venue_id)+api_key)
+        # venue=json.loads(venue.content)
         template = JINJA_ENVIRONMENT.get_template('viewapievent.html')
-        self.response.write(template.render({'event':event},
-                                            {'location':venue}))
-
+        self.response.write(template.render({'event':event}))
 
 class ResultsPage(webapp2.RequestHandler):
     def get(self):
